@@ -11,6 +11,7 @@ Swift 2
 ####Jump to a Topic
 
 [Drawing an arc](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-an-arc)
+[Drawing an oval](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-an-oval)
 [Drawing a gradient](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-a-gradient)
 
 ####Drawing an arc
@@ -24,7 +25,7 @@ class MyView: UIView {
     override func drawRect(rect: CGRect) {
 
         //Draw the main path
-        let counterColor: UIColor = UIColor.orangeColor()
+        let color = UIColor.orangeColor()
 
         // center of view
         let center = CGPoint(x:bounds.width/2, y: bounds.height/2)
@@ -48,10 +49,34 @@ class MyView: UIView {
 
         // set line width
         path.lineWidth = arcWidth
-        counterColor.setStroke()
+        color.setStroke()
 
         // stroke the path
         path.stroke()
+    }
+}
+````
+
+####Drawing an oval
+
+![icon](imgs/oval.png)
+
+````
+@IBDesignable
+class OvalView: UIView {
+
+@IBInspectable var fillColor: UIColor = UIColor.greenColor()
+
+    override func drawRect(rect: CGRect) {
+        
+        // create oval path
+        let ovalPath = UIBezierPath(ovalInRect: rect)
+
+        // give the current context a fill color
+        fillColor.setFill()
+
+        // fill the oval path
+        ovalPath.fill()
     }
 }
 ````
