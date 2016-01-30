@@ -11,7 +11,9 @@ Swift 2
 ####Jump to a Topic
 
 [Drawing an arc](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-an-arc)
+
 [Drawing an oval](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-an-oval)
+
 [Drawing a gradient](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-a-gradient)
 
 ####Drawing an arc
