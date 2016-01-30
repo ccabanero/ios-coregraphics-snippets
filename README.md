@@ -11,9 +11,9 @@ Swift 2
 
 ####Jump to a Topic
 
-[Adding a Sprite Primitive to a Scene](https://github.com/ccabanero/ios-spritekit-snippets#adding-a-sprite-primitive-to-a-scene)
+[Drawing a gradient](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-a-gradient)
 
-####Creating a gradient
+####Drawing a gradient
 
 ````
 @IBDesignable
@@ -24,7 +24,7 @@ class GraphView: UIView {
 
     override func drawRect(rect: CGRect) {
 
-        //set up background clipping area
+        //set up background clipping area for rounded corners
         let path = UIBezierPath(roundedRect: rect, byRoundingCorners: UIRectCorner.AllCorners, cornerRadii: CGSize(width: 8.0, height: 8.0))
         path.addClip()
 
