@@ -16,6 +16,8 @@ Swift 2
 
 [Drawing a gradient](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-a-gradient)
 
+[Clipping a gradient with a Path](https://github.com/ccabanero/ios-coregraphics-snippets#clipping-a-gradient-with-a-path)
+
 ####Drawing an arc
 
 ![icon](imgs/arc.png)
@@ -85,7 +87,7 @@ class OvalView: UIView {
 
 ####Drawing a gradient
 
-![icon](imgs/gradient.png)
+![icon](imgs/gradient_square.png)
 
 ````
 @IBDesignable
@@ -95,10 +97,6 @@ class MyView: UIView {
     @IBInspectable var endColor: UIColor = UIColor.greenColor()
 
     override func drawRect(rect: CGRect) {
-
-        //(optional) set up background clipping area for rounded corners
-        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: UIRectCorner.AllCorners, cornerRadii: CGSize(width: 8.0, height: 8.0))
-        path.addClip()
 
         // get the current context
         let context = UIGraphicsGetCurrentContext()
@@ -116,3 +114,36 @@ class MyView: UIView {
     }
 }
 ````
+
+####Clipping a gradient with a Path
+
+![icon](imgs/gradient_clip.png)
+
+````
+@IBDesignable
+class MyView: UIView {
+
+    @IBInspectable var startColor: UIColor = UIColor.redColor()
+    @IBInspectable var endColor: UIColor = UIColor.greenColor()
+    
+    override func drawRect(rect: CGRect) {
+
+        // round the top left and right corners by clipping with path
+        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: [UIRectCorner.TopLeft,  UIRectCorner.TopRight], cornerRadii: CGSize(width: 20.0, height: 20.0))
+        path.addClip()
+
+        // get the current context
+        let context = UIGraphicsGetCurrentContext()
+
+        // create gradient with - colors, color space, and color stop locations
+        let colors = [startColor.CGColor, endColor.CGColor]
+        let colorSpace = CGColorSpaceCreateDeviceRGB()
+        let colorLocations:[CGFloat] = [0.0, 1.0]
+        let gradient = CGGradientCreateWithColors(colorSpace, colors, colorLocations)
+
+        // draw the background gradient
+        let startPoint = CGPoint.zero
+        let endPoint = CGPoint(x: 0, y: self.bounds.height)
+        CGContextDrawLinearGradient(context, gradient, startPoint, endPoint, CGGradientDrawingOptions.DrawsAfterEndLocation)
+    }
+}
