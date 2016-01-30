@@ -85,6 +85,8 @@ class OvalView: UIView {
 
 ####Drawing a gradient
 
+![icon](imgs/gradient.png)
+
 ````
 @IBDesignable
 class MyView: UIView {
