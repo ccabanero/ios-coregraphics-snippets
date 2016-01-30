@@ -15,7 +15,7 @@ Swift 2
 
 ####Drawing an arc
 
-[screnshot](/imgs/arc)
+![icon](imgs/arc.png)
 
 ````
 @IBDesignable
