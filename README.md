@@ -1,5 +1,4 @@
-ios-coregraphics-snippets
-======================
+#ios-coregraphics-snippets
 
 ##Description
 
@@ -11,6 +10,7 @@ Swift 2
 
 ####Jump to a Topic
 
+[Drawing an arc](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-an-arc)
 [Drawing a gradient](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-a-gradient)
 
 ####Drawing an arc
