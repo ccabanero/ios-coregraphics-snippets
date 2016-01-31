@@ -228,6 +228,31 @@ class CustomView: UIView {
 }
 ````
 
+####Drawing an ellipse
+
+![icon](imgs/ellipse.png)
+
+````
+@IBDesignable
+class CustomView: UIView {
+
+    override func drawRect(rect: CGRect) {
+
+        let context = UIGraphicsGetCurrentContext()
+
+        CGContextSetLineWidth(context, 10.0)
+
+        CGContextSetStrokeColorWithColor(context, UIColor.greenColor().CGColor)
+
+        let rectangle = CGRectMake(35, 50, 250, 200)
+
+        CGContextAddEllipseInRect(context, rectangle)
+
+        CGContextStrokePath(context)
+    }
+}
+````
+
 ####Drawing a gradient
 
 ![icon](imgs/gradient_square.png)
