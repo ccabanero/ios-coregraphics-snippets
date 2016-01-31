@@ -2,7 +2,7 @@
 
 ##Description
 
-This repo simply contains sample code for using Core Graphics.
+This repo simply contains sample code for using Core Graphics with Swift.
 
 ##Languages
 
@@ -13,6 +13,8 @@ Swift 2
 [Drawing an arc](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-an-arc)
 
 [Drawing an oval](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-an-oval)
+
+[Drawing a line](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-a-line)
 
 [Drawing a gradient](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-a-gradient)
 
@@ -81,6 +83,36 @@ class OvalView: UIView {
 
         // fill the oval path
         ovalPath.fill()
+    }
+}
+````
+
+####Drawing a line
+![icon](imgs/line.png)
+
+````
+@IBDesignable
+class CustomView: UIView {
+
+    override func drawRect(rect: CGRect) {
+
+        // get the graphics context for the view
+        let context = UIGraphicsGetCurrentContext()
+
+        // line width
+        CGContextSetLineWidth(context, 4.0)
+
+        // stroke color
+        CGContextSetStrokeColorWithColor(context, UIColor.yellowColor().CGColor)
+
+        // line start
+        CGContextMoveToPoint(context, 20, 20)
+
+        // line end
+        CGContextAddLineToPoint(context, 600, 600)
+
+        // draw line
+        CGContextStrokePath(context)
     }
 }
 ````
