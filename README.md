@@ -16,7 +16,7 @@ Swift 2
 
 [Drawing a line](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-a-line)
 
-[Drawing a traingle](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-a-triangle_path)
+[Drawing a triangle](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-a-triangle-path)
 
 [Drawing a gradient](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-a-gradient)
 
