@@ -18,6 +18,8 @@ Swift 2
 
 [Drawing a triangle](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-a-triangle-path)
 
+[Drawing stars](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-stars)
+
 [Drawing a gradient](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-a-gradient)
 
 [Clipping a gradient with a Path](https://github.com/ccabanero/ios-coregraphics-snippets#clipping-a-gradient-with-a-path)
@@ -145,6 +147,55 @@ class CustomView: UIView {
 
         // draw line
         CGContextStrokePath(context)
+    }
+}
+````
+
+####Drawing stars
+
+![icon](imgs/stars.png)
+
+````
+@IBDesignable
+class CustomView: UIView {
+
+    override func drawRect(rect: CGRect) {
+
+        drawStars(5)
+    }
+
+    private func drawStars(numberOfStars: Int) {
+
+        let context = UIGraphicsGetCurrentContext();
+
+        var xCenter = 40.0;
+        let yCenter = 150.0;
+
+        let w  = 50.0;
+        let r = w / 2.0;
+        let flip = -1.0;
+        let PI = 3.14159265359
+
+        for _ in 1...numberOfStars {
+
+            CGContextSetFillColorWithColor(context, UIColor.yellowColor().CGColor)
+
+            let theta = 2.0 * PI * (2.0 / 5.0); // 144 degrees
+
+            CGContextMoveToPoint(context, CGFloat(xCenter), CGFloat(r * flip + yCenter));
+
+            for index in 1...4 {
+                let x = r * sin(Double(index) * theta);
+                let y = r * cos(Double(index) * theta);
+                CGContextAddLineToPoint(context, CGFloat(x + xCenter), CGFloat(y * flip + yCenter));
+            }
+
+            let spaceBetweenStars = w + 10
+            xCenter += spaceBetweenStars;
+        }
+
+        CGContextClosePath(context);
+        CGContextFillPath(context);
     }
 }
 ````
