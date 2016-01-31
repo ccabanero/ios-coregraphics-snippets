@@ -22,6 +22,8 @@ Swift 2
 
 [Drawing a rectangle](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-a-rectangle)
 
+[Drawing an ellipse](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-an-ellipse)
+
 [Drawing a gradient](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-a-gradient)
 
 [Clipping a gradient with a Path](https://github.com/ccabanero/ios-coregraphics-snippets#clipping-a-gradient-with-a-path)
