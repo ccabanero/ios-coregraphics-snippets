@@ -16,6 +16,8 @@ Swift 2
 
 [Drawing a line](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-a-line)
 
+[Drawing a traingle](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-a-triangle_path)
+
 [Drawing a gradient](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-a-gradient)
 
 [Clipping a gradient with a Path](https://github.com/ccabanero/ios-coregraphics-snippets#clipping-a-gradient-with-a-path)
@@ -71,7 +73,7 @@ class MyView: UIView {
 @IBDesignable
 class OvalView: UIView {
 
-@IBInspectable var fillColor: UIColor = UIColor.greenColor()
+    @IBInspectable var fillColor: UIColor = UIColor.greenColor()
 
     override func drawRect(rect: CGRect) {
         
@@ -110,6 +112,36 @@ class CustomView: UIView {
 
         // line end
         CGContextAddLineToPoint(context, 600, 600)
+
+        // draw line
+        CGContextStrokePath(context)
+    }
+}
+````
+
+####Drawing a triangle (path)
+![icon](imgs/triangle.png)
+
+````
+@IBDesignable
+class CustomView: UIView {
+
+    override func drawRect(rect: CGRect) {
+
+        // get the graphics context for the view
+        let context = UIGraphicsGetCurrentContext()
+
+        // line width
+        CGContextSetLineWidth(context, 4.0)
+
+        // stroke color
+        CGContextSetStrokeColorWithColor(context, UIColor.yellowColor().CGColor)
+
+        // triangle path
+        CGContextMoveToPoint(context, 150, 50)
+        CGContextAddLineToPoint(context, 250, 250)
+        CGContextAddLineToPoint(context, 50, 250)
+        CGContextAddLineToPoint(context, 150, 50)
 
         // draw line
         CGContextStrokePath(context)
