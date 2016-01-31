@@ -218,6 +218,7 @@ class CustomView: UIView {
 
         CGContextSetStrokeColorWithColor(context, UIColor.cyanColor().CGColor)
 
+        // declaring the rectangle
         let rectangle = CGRectMake(60, 100, 200, 80)
 
         CGContextAddRect(context, rectangle)
