@@ -20,6 +20,8 @@ Swift 2
 
 [Drawing stars](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-stars)
 
+[Drawing a rectangle](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-a-rectangle)
+
 [Drawing a gradient](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-a-gradient)
 
 [Clipping a gradient with a Path](https://github.com/ccabanero/ios-coregraphics-snippets#clipping-a-gradient-with-a-path)
@@ -196,6 +198,31 @@ class CustomView: UIView {
 
         CGContextClosePath(context);
         CGContextFillPath(context);
+    }
+}
+````
+
+####Drawing a rectangle
+
+![icon](imgs/rectangle.png)
+
+````
+@IBDesignable
+class CustomView: UIView {
+
+    override func drawRect(rect: CGRect) {
+
+        let context = UIGraphicsGetCurrentContext()
+
+        CGContextSetLineWidth(context, 8)
+
+        CGContextSetStrokeColorWithColor(context, UIColor.cyanColor().CGColor)
+
+        let rectangle = CGRectMake(60, 100, 200, 80)
+
+        CGContextAddRect(context, rectangle)
+
+        CGContextStrokePath(context)
     }
 }
 ````
