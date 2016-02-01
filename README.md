@@ -14,7 +14,7 @@ Swift 2
 
 [Drawing an ellipse](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-an-ellipse)
 
-[Drawing a circle](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-an-circle)
+[Drawing a circle](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-a-circle)
 
 [Drawing a line](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-a-line)
 
