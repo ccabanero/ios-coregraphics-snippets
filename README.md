@@ -101,6 +101,34 @@ class MyView: UIView {
 }
 ````
 
+####Drawing a cubic bezier curve
+
+![icon](imgs/cubic_bezier_curve)
+
+````
+@IBDesignable
+class CustomView: UIView {
+
+    override func drawRect(rect: CGRect) {
+
+        let context = UIGraphicsGetCurrentContext()
+
+        CGContextSetLineWidth(context, 4.0)
+
+        CGContextSetStrokeColorWithColor(context, UIColor.yellowColor().CGColor)
+
+        CGContextMoveToPoint(context, 0, 100)
+        CGContextAddCurveToPoint(context, 25, 0, 75, 200, 100, 100)
+
+        CGContextMoveToPoint(context, 100, 100)
+        CGContextAddCurveToPoint(context, 125, 0, 175, 200, 200, 100)
+
+        CGContextStrokePath(context)
+    }
+}
+````
+
+
 ####Drawing an ellipse
 
 ![icon](imgs/ellipse.png)
