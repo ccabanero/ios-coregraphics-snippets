@@ -18,6 +18,8 @@ Swift 2
 
 [Drawing a circle](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-a-circle)
 
+[Drawing a shadow](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-a-shadow)
+
 [Drawing a line](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-a-line)
 
 [Drawing a triangle](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-a-triangle-path)
@@ -146,6 +148,34 @@ class CustomView: UIView {
 
         // fill
         CGContextSetFillColorWithColor(context, UIColor.greenColor().CGColor)
+        CGContextFillEllipseInRect(context, rectangle)
+    }
+}
+````
+
+####Drawing a shadow
+
+![icon](imgs/shadow.png)
+
+````
+@IBDesignable
+class CustomView: UIView {
+
+    override func drawRect(rect: CGRect) {
+
+        let context = UIGraphicsGetCurrentContext()
+
+        // shadow
+        let shadowOffset = CGSizeMake(15, 15)
+        let blur = CGFloat(30)
+        CGContextSetShadow(context, shadowOffset, blur)
+
+        // ellipse
+        let rectangle = CGRectMake(50, 50, 200, 200)
+        CGContextAddEllipseInRect(context, rectangle)
+
+        // fill
+        CGContextSetFillColorWithColor(context, UIColor.yellowColor().CGColor)
         CGContextFillEllipseInRect(context, rectangle)
     }
 }
