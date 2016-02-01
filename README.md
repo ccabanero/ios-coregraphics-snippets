@@ -10,7 +10,8 @@ Swift 2
 
 ####Jump to a Topic
 
-[Drawing an arc](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-an-arc)
+[Drawing an arc (via UIBezierPath)](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-an-arc)
+
 
 [Drawing an ellipse](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-an-ellipse)
 
@@ -29,8 +30,34 @@ Swift 2
 [Clipping a gradient with a Path](https://github.com/ccabanero/ios-coregraphics-snippets#clipping-a-gradient-with-a-path)
 
 ####Drawing an arc
-
 ![icon](imgs/arc.png)
+
+````
+@IBDesignable
+class CustomView: UIView {
+
+    override func drawRect(rect: CGRect) {
+
+        let context = UIGraphicsGetCurrentContext()
+
+        CGContextSetLineWidth(context, 30.0)
+
+        CGContextSetStrokeColorWithColor(context, UIColor.redColor().CGColor)
+
+        CGContextMoveToPoint(context, 20, 100)
+        CGContextAddArcToPoint(context, 20,180, 100,180, 80)
+
+        CGContextMoveToPoint(context, 100, 180)
+        CGContextAddArcToPoint(context, 180, 180, 180, 100, 80)
+
+        CGContextStrokePath(context)
+    }
+}
+````
+
+####Drawing an arc (via UIBezierPath)
+
+![icon](imgs/arc_uibezierpath.png)
 
 ````
 @IBDesignable
