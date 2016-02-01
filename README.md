@@ -10,8 +10,9 @@ Swift 2
 
 ####Jump to a Topic
 
-[Drawing an arc (via UIBezierPath)](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-an-arc)
+[Drawing an arc](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-an-arc)
 
+[Drawing an arc (via UIBezierPath)](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-an-arc-via-uibezierpath)
 
 [Drawing an ellipse](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-an-ellipse)
 
