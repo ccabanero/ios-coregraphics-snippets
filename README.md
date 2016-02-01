@@ -14,6 +14,8 @@ Swift 2
 
 [Drawing an arc (via UIBezierPath)](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-an-arc-via-uibezierpath)
 
+[Drawing a cubic bezier curve](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-a-cubic-bezier-curve)
+
 [Drawing an ellipse](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-an-ellipse)
 
 [Drawing a circle](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-a-circle)
@@ -103,7 +105,7 @@ class MyView: UIView {
 
 ####Drawing a cubic bezier curve
 
-![icon](imgs/cubic_bezier_curve)
+![icon](imgs/cubic_bezier_curve.png)
 
 ````
 @IBDesignable
