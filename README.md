@@ -12,7 +12,9 @@ Swift 2
 
 [Drawing an arc](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-an-arc)
 
-[Drawing an oval](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-an-oval)
+[Drawing an ellipse](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-an-ellipse)
+
+[Drawing a circle](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-an-circle)
 
 [Drawing a line](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-a-line)
 
@@ -21,8 +23,6 @@ Swift 2
 [Drawing stars](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-stars)
 
 [Drawing a rectangle](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-a-rectangle)
-
-[Drawing an ellipse](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-an-ellipse)
 
 [Drawing a gradient](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-a-gradient)
 
@@ -71,26 +71,54 @@ class MyView: UIView {
 }
 ````
 
-####Drawing an oval
+####Drawing an ellipse
 
-![icon](imgs/oval.png)
+![icon](imgs/ellipse.png)
 
 ````
 @IBDesignable
-class OvalView: UIView {
-
-    @IBInspectable var fillColor: UIColor = UIColor.greenColor()
+class CustomView: UIView {
 
     override func drawRect(rect: CGRect) {
-        
-        // create oval path
-        let ovalPath = UIBezierPath(ovalInRect: rect)
 
-        // give the current context a fill color
-        fillColor.setFill()
+        let context = UIGraphicsGetCurrentContext()
 
-        // fill the oval path
-        ovalPath.fill()
+        // ellipse
+        let rectangle = CGRectMake(35, 50, 250, 200)
+        CGContextAddEllipseInRect(context, rectangle)
+        CGContextSetLineWidth(context, 10.0)
+
+        // stroke
+        CGContextSetStrokeColorWithColor(context, UIColor.greenColor().CGColor)
+        CGContextStrokePath(context)
+    }
+}
+````
+
+####Drawing a circle 
+
+![icon](imgs/circle.png)
+
+````
+@IBDesignable
+class CustomView: UIView {
+
+    override func drawRect(rect: CGRect) {
+
+        let context = UIGraphicsGetCurrentContext()
+
+        // ellipse
+        let rectangle = CGRectMake(50, 50, 200, 200)
+        CGContextAddEllipseInRect(context, rectangle)
+
+        // stroke
+        CGContextSetLineWidth(context, 4.0)
+        CGContextSetStrokeColorWithColor(context, UIColor.whiteColor().CGColor)
+        CGContextStrokePath(context)
+
+        // fill
+        CGContextSetFillColorWithColor(context, UIColor.greenColor().CGColor)
+        CGContextFillEllipseInRect(context, rectangle)
     }
 }
 ````
@@ -224,31 +252,6 @@ class CustomView: UIView {
         let rectangle = CGRectMake(60, 100, 200, 80)
 
         CGContextAddRect(context, rectangle)
-
-        CGContextStrokePath(context)
-    }
-}
-````
-
-####Drawing an ellipse
-
-![icon](imgs/ellipse.png)
-
-````
-@IBDesignable
-class CustomView: UIView {
-
-    override func drawRect(rect: CGRect) {
-
-        let context = UIGraphicsGetCurrentContext()
-
-        CGContextSetLineWidth(context, 10.0)
-
-        CGContextSetStrokeColorWithColor(context, UIColor.greenColor().CGColor)
-
-        let rectangle = CGRectMake(35, 50, 250, 200)
-
-        CGContextAddEllipseInRect(context, rectangle)
 
         CGContextStrokePath(context)
     }
