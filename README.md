@@ -410,7 +410,6 @@ class MyView: UIView {
 }
 ````
 
-
 ####Adding Text (via CoreText)
 
 ![icon](imgs/text.png)
@@ -461,7 +460,7 @@ class CustomView: UIView {
         CGPathAddRect(path, nil, textRect)
 
         // create an attributed string to represent text and styling
-        let attributedString = NSMutableAttributedString(string: "Text drawn in with CoreText!")
+        let attributedString = NSMutableAttributedString(string: "Text drawn with CoreText!")
         // text font
         attributedString.addAttribute(NSFontAttributeName, value: UIFont( name: "Helvetica", size: 17.0)!, range: NSRange(location: 0, length: attributedString.length))
         // text color
