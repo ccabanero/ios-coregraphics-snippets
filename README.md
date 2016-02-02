@@ -408,3 +408,70 @@ class MyView: UIView {
         CGContextDrawLinearGradient(context, gradient, startPoint, endPoint, CGGradientDrawingOptions.DrawsAfterEndLocation)
     }
 }
+
+####Adding Text
+
+![icon](imgs/text.png)
+
+````
+@IBDesignable
+class CustomView: UIView {
+
+    override func drawRect(rect: CGRect) {
+
+        if let context = UIGraphicsGetCurrentContext() {
+
+            self.drawLine(context)
+            self.drawText(context)
+        }
+    }
+
+    private func drawLine(context: CGContextRef) -> Void {
+
+        // line width
+        CGContextSetLineWidth(context, 4.0)
+
+        // stroke color
+        CGContextSetStrokeColorWithColor(context, UIColor.yellowColor().CGColor)
+
+        // triangle path
+        CGContextMoveToPoint(context, 0, 100)
+        CGContextAddLineToPoint(context, 50, 25)
+        CGContextAddLineToPoint(context, 100, 150)
+        CGContextAddLineToPoint(context, 150, 10)
+        CGContextAddLineToPoint(context, 200, 200)
+        CGContextAddLineToPoint(context, 250, 100)
+
+        // draw line
+        CGContextStrokePath(context)
+
+        // flip when drawing with CoreText
+        CGContextSetTextMatrix(context, CGAffineTransformIdentity)
+        CGContextTranslateCTM(context, 0, self.bounds.size.height)
+        CGContextScaleCTM(context, 1.0, -1.0)
+    }
+
+    private func drawText(context: CGContextRef) -> Void {
+
+        // create path for text
+        let path = CGPathCreateMutable()
+        let textRect = CGRect(x: 20, y: 10, width:250, height: 21)
+        CGPathAddRect(path, nil, textRect)
+
+        // create an attributed string to represent text and styling
+        let attributedString = NSMutableAttributedString(string: "Text drawn in with CoreText!")
+        // text font
+        attributedString.addAttribute(NSFontAttributeName, value: UIFont( name: "Helvetica", size: 17.0)!, range: NSRange(location: 0, length: attributedString.length))
+        // text color
+        attributedString.addAttribute(NSForegroundColorAttributeName, value: UIColor.whiteColor(), range: NSRange(location: 0, length: attributedString.length))
+
+        // for creating frame for rendering text
+        let framesetter = CTFramesetterCreateWithAttributedString(attributedString)
+        let range = CFRange(location: 0, length: attributedString.length)
+
+        // draw the text
+        let frame = CTFramesetterCreateFrame(framesetter, range, path, nil)
+        CTFrameDraw(frame, context)
+    }
+}
+````
