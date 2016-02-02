@@ -34,6 +34,8 @@ Swift 2
 
 [Clipping a gradient with a Path](https://github.com/ccabanero/ios-coregraphics-snippets#clipping-a-gradient-with-a-path)
 
+[Drawing line with Text](https://github.com/ccabanero/ios-coregraphics-snippets#adding-text-via-coretext)
+
 ####Drawing an arc
 ![icon](imgs/arc.png)
 
@@ -445,14 +447,14 @@ class CustomView: UIView {
 
         // draw line
         CGContextStrokePath(context)
+    }
+
+    private func drawText(context: CGContextRef) -> Void {
 
         // flip when drawing with CoreText
         CGContextSetTextMatrix(context, CGAffineTransformIdentity)
         CGContextTranslateCTM(context, 0, self.bounds.size.height)
         CGContextScaleCTM(context, 1.0, -1.0)
-    }
-
-    private func drawText(context: CGContextRef) -> Void {
 
         // create path for text
         let path = CGPathCreateMutable()
