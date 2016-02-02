@@ -476,5 +476,15 @@ class CustomView: UIView {
         let frame = CTFramesetterCreateFrame(framesetter, range, path, nil)
         CTFrameDraw(frame, context)
     }
+
+    // for supporting initialization programmatically
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+
+    // for supporting use in Storyboard
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
 }
 ````
