@@ -408,8 +408,9 @@ class MyView: UIView {
         CGContextDrawLinearGradient(context, gradient, startPoint, endPoint, CGGradientDrawingOptions.DrawsAfterEndLocation)
     }
 }
+````
 
-####Adding Text
+####Adding Text (via CoreText)
 
 ![icon](imgs/text.png)
 
