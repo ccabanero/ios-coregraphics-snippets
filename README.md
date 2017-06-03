@@ -1,14 +1,14 @@
-#ios-coregraphics-snippets
+# iOS CoreGraphics Snippets
 
-##Description
+## Description
 
 This repo simply contains sample code for using Core Graphics with Swift.
 
-##Languages
+## Languages
 
 Swift 2
 
-####Jump to a Topic
+#### Jump to a Topic
 
 [Drawing an arc](https://github.com/ccabanero/ios-coregraphics-snippets#drawing-an-arc)
 
@@ -36,7 +36,8 @@ Swift 2
 
 [Drawing line with Text](https://github.com/ccabanero/ios-coregraphics-snippets#adding-text-via-coretext)
 
-####Drawing an arc
+#### Drawing an arc
+
 ![icon](imgs/arc.png)
 
 ````
@@ -62,7 +63,7 @@ class CustomView: UIView {
 }
 ````
 
-####Drawing an arc (via UIBezierPath)
+#### Drawing an arc (via UIBezierPath)
 
 ![icon](imgs/arc_uibezierpath.png)
 
@@ -105,7 +106,7 @@ class MyView: UIView {
 }
 ````
 
-####Drawing a cubic bezier curve
+#### Drawing a cubic bezier curve
 
 ![icon](imgs/cubic_bezier_curve.png)
 
@@ -133,7 +134,7 @@ class CustomView: UIView {
 ````
 
 
-####Drawing an ellipse
+#### Drawing an ellipse
 
 ![icon](imgs/ellipse.png)
 
@@ -157,7 +158,7 @@ class CustomView: UIView {
 }
 ````
 
-####Drawing a circle 
+#### Drawing a circle 
 
 ![icon](imgs/circle.png)
 
@@ -185,7 +186,7 @@ class CustomView: UIView {
 }
 ````
 
-####Drawing a shadow
+#### Drawing a shadow
 
 ![icon](imgs/shadow.png)
 
@@ -213,7 +214,7 @@ class CustomView: UIView {
 }
 ````
 
-####Drawing a line
+#### Drawing a line
 ![icon](imgs/line.png)
 
 ````
@@ -243,7 +244,7 @@ class CustomView: UIView {
 }
 ````
 
-####Drawing a triangle (path)
+#### Drawing a triangle (path)
 ![icon](imgs/triangle.png)
 
 ````
@@ -273,7 +274,7 @@ class CustomView: UIView {
 }
 ````
 
-####Drawing stars
+#### Drawing stars
 
 ![icon](imgs/stars.png)
 
@@ -322,7 +323,7 @@ class CustomView: UIView {
 }
 ````
 
-####Drawing a rectangle
+#### Drawing a rectangle
 
 ![icon](imgs/rectangle.png)
 
@@ -348,7 +349,7 @@ class CustomView: UIView {
 }
 ````
 
-####Drawing a gradient
+#### Drawing a gradient
 
 ![icon](imgs/gradient_square.png)
 
@@ -378,7 +379,7 @@ class MyView: UIView {
 }
 ````
 
-####Clipping a gradient with a Path
+#### Clipping a gradient with a Path
 
 ![icon](imgs/gradient_clip.png)
 
@@ -412,7 +413,7 @@ class MyView: UIView {
 }
 ````
 
-####Adding Text (via CoreText)
+#### Adding Text (via CoreText)
 
 ![icon](imgs/text.png)
 
